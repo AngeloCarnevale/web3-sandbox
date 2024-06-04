@@ -4,6 +4,6 @@ Para conectar ao servidor: Coonfigurar o arquivo truffle-config.js
 
 truffle compile -> ver se está tudo certo com os contratos antes de migrar para a blockchain
 
-truffle migrate -> migrar os contratos para a blockchain
+truffle migrate -> migrar os contratos para a blockchain (--reset para quando for refazer uma migrate)
 
 truffle console -> acessar o terminal da blockchain e executar comandos interagindo com os contratos

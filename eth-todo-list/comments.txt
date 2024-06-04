@@ -1,0 +1,9 @@
+Servidor Blockchain local: Truffle Ganache
+
+Para conectar ao servidor: Coonfigurar o arquivo truffle-config.js
+
+truffle compile -> ver se está tudo certo com os contratos antes de migrar para a blockchain
+
+truffle migrate -> migrar os contratos para a blockchain
+
+truffle console -> acessar o terminal da blockchain e executar comandos interagindo com os contratos

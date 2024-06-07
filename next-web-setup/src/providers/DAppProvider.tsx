@@ -1,16 +1,26 @@
-import { Config, Goerli, Mainnet, DAppProvider as Provider } from "@usedapp/core"
-import { getDefaultProvider } from "ethers"
+"use client";
+
+import {
+  Localhost,
+  Config,
+  MetamaskConnector,
+  DAppProvider as Provider,
+} from "@usedapp/core";
 
 const config: Config = {
-  readOnlyChainId: Mainnet.chainId,
-  readOnlyUrls: {
-    [Mainnet.chainId]: getDefaultProvider('mainnet'),
-    [Goerli.chainId]: getDefaultProvider('goerli'),
+  readOnlyChainId:Localhost.chainId,
+  connectors: {
+    metamask: new MetamaskConnector(),
   },
-}
+  readOnlyUrls: {
+    [Localhost.chainId]: "http://127.0.0.1:7545",
+  },
+};
 
-export default function DAppProvider({ children }: { children: React.ReactNode }) {
-  return (
-    <Provider config={config}>{children}</Provider>
-  )
+export default function DAppProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <Provider config={config}>{children}</Provider>;
 }
